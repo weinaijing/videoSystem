@@ -1,0 +1,47 @@
+p {
+  background: #aaff20;
+  font-size: 26px;
+}
+div {
+  width: 100px;
+  background: #aaff20;
+  height: 100px;
+  font-size: 26px;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  background: #aaff20;
+}
+.box a {
+  color: aqua;
+}
+.box a:hover {
+  color: red;
+}
+.box p {
+  color: pink;
+}
+.dv {
+  width: 144px;
+  height: 80px;
+  background: #008000;
+}
+/*
+    less 内置函数
+    saturate(@color,百分比);//  饱和度增加百分比
+    desaturate(@color,百分比);// 饱和度降低百分比
+    fadeout(@color,百分比);//  透明度降低百分比
+    fadein(@color,百分比);// 透明度增加百分比
+    fade(@color,百分比);// 设置透明度为百分比
+    lingten(@color,百分比);// 亮度增加百分比
+    darken(@color,百分比);// 亮度降低百分比
+*/
+.dv2 {
+  width: 300px;
+  height: 150px;
+  background: #ffc0ff;
+}
+.dv2 a:hover {
+  background: rgba(145, 184, 83, 0.5);
+}

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bilibili</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="component/pear/clientcss/bootstrap.min.css">
+    <link rel="stylesheet" href="component/pear/clientcss/font-awesome.css">
+    <link rel="stylesheet" href="component/pear/clientcss/首页.css" />
+    <script src="component/JQ/js/jquery.js"></script>
+    <script src="component/boostrap/js/bootstrap.min.js"></script>
+    <script src="component/layui/layui.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="text-center .popular-container">
+        <!-- 导航栏 -->
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/首页.html" style="color: white;">主站</a>
+                </div>
+                <!-- 左边导航部分 -->
+                <div class="navbarleft">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">
+                                漫画
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">热门直播</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">热门活动</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">
+                                游戏中心
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">热门直播</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">热门活动</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">
+                                直播
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">热门直播</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">热门活动</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" style="color: white;">番剧</a>
+                        </li>
+                        <li>
+                            <a href="#" style="color: white;">会员购</a>
+                        </li>
+                        <li>
+                            <a href="#" style="color: white;">赛事</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 右边导航部分 -->
+                <div class="navbarright">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <div class="my"></div>
+                        </li>
+
+                        <li class="mys" onmouseenter="load_user()" onmouseleave="load_user2()">
+                            <a href="#" style="color: white;">我的</a>
+                            <!-- 没有登录信息 -->
+                            <div class="my" id="my">
+                                <div class="loginerweima">
+                                    <h4>手机端</h4>
+                                    <span>使用手机app扫码登录</span>
+                                    <img src="component/images/erweima.png" alt="" style="margin-top:20px"><br>
+                                    <button id="loginBtn"><a href="/toUserLogin">使用账号密码登录</a></button><br>
+                                    <span>没有账号？</span>
+                                    <a href="/userlogin">去注册</a>
+                                </div>
+                            </div>
+                            <!-- 已有登录信息 -->
+                            <div class="my1" id="my1">
+                                <div class="loginerweima1">
+                                    <img src="" alt="" width="100px" id="my1touxiang" style="border-radius: 50%;"><br>
+                                    <span id="username" style="font-size: 20px; color: skyblue;"></span><br><br>
+                                    <a href="">
+                                        <span id="guanzhu">关注 |</span>
+                                        <span id="fensi">粉丝 |</span>
+                                        <span id="dongtai">动态</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" style="color: white;">消息</a>
+                        </li>
+                        <li>
+                            <a href="#" style="color: white;">动态</a>
+                        </li>
+                        <li>
+                            <a href="#" style="color: white;">收藏</a>
+                        </li>
+                        <li>
+                            <a href="#" style="color: white;">历史</a>
+                        </li>
+                        <li>
+                            <a href="/toupload" style="color: white;">投稿</a>
+                        </li>
+                        <li class="downloadBtn">
+                            <a href="#" style="color: white;"><span>下载客户端</span></a>
+                            <div class="download">
+                                <div class="downloaderweima">
+                                    <h4>手机端</h4>
+                                    <span>扫码下载手机app</span>
+                                    <img src="component/images/erweima.png" alt="" style="margin-top:20px">
+                                </div>
+                                <div class="btndownload">
+                                    <h4>Windows端</h4>
+                                    <span>点击按钮下载</span>
+                                    <img src="component/images/bililogo.png" alt=""
+                                        style="width: 230px; margin: 10px 0;">
+                                    <button download>立即下载</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 搜索框 -->
+                <div class="wrap">
+                    <div class="search">
+                        <input type="text" class="searchTerm" placeholder="你想找什么?">
+                        <button type="submit" class="searchButton">
+                            <i class="layui-icon layui-icon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 导航栏背景logo -->
+            <div class="navlogo">
+                <img src="component/images/bilibiliLOG.webp" alt="">
+            </div>
+            <!-- 跟随导航栏 -->
+            <a href="#top">
+                <div class="flownav" href="#top">
+
+                </div>
+            </a>
+        </nav>
+        <!-- 标签分栏 -->
+        <div class="biaoqianfenlan">
+            <div class="fenlan1">
+                <div class="fenlan1detail text-center">
+                    <a href="/动态页面.html">
+                        <img src="component/images/logo.png" alt="" style="width: 60px;"><br>
+                        <span>动态</span>
+                    </a>
+                </div>
+
+                <div class="fenlan1detail text-center">
+                    <a href="/热门页面.html">
+                        <img src="component/images/remenlogo.png" alt="" style="width: 60px;"><br>
+                        <span>热门</span>
+                    </a>
+                </div>
+
+                <div class="fenlan1detail text-center">
+                    <a href="/频道页面.html">
+                        <img src="component/images/pindao.jpg" alt="" style="width: 60px;"><br>
+                        <span>频道</span>
+                    </a>
+                </div>
+            </div>
+            <div class="fenlan2">
+                <div class="fenlan2left">
+                    <div><a href="">番剧</a></div>
+                    <div><a href="">国创</a></div>
+                    <div><a href="">综艺</a></div>
+                    <div><a href="">电影</a></div>
+                    <div><a href="">电视剧</a></div>
+                    <div><a href="">纪录片</a></div>
+                    <div><a href="">动画</a></div>
+                    <div><a href="">游戏</a></div>
+                    <div><a href="">鬼畜</a></div>
+                    <div><a href="">音乐</a></div>
+                    <div><a href="">舞蹈</a></div>
+                    <div><a href="">影视</a></div>
+                    <div><a href="">娱乐</a></div>
+                    <div><a href="">知识</a></div>
+                    <div><a href="">科技</a></div>
+                    <div><a href="">资讯</a></div>
+                    <div><a href="">美食</a></div>
+                    <div><a href="">生活</a></div>
+                    <div><a href="">汽车</a></div>
+                    <div><a href="">时尚</a></div>
+                    <div><a href="">运动</a></div>
+                    <div><a href="">更多资源</a></div>
+                </div>
+
+                <div class="fenlan2right">
+                    <div><a href="">专栏</a></div>
+                    <div><a href="">活动</a></div>
+                    <div><a href="">社区中心</a></div>
+                    <div><a href="">直播</a></div>
+                    <div> <a href="">课堂</a></div>
+                    <div><a href="">更多</a></div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 主要内容 -->
+        <div class="neiron">
+            <!-- 轮播图 -->
+            <div id="myCarousel" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <a href="#"><img src="component/images/lunbotu1.webp" alt="First slide"></a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img src="component/images/lunbotu2.webp" alt="Second slide"></a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img src="component/images/lunbotu3.webp" alt="Third slide"></a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img src="component/images/lunbotu4.webp" alt="First slide"></a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img src="component/images/lunbotu5.webp" alt="Second slide"></a>
+                    </div>
+                    <div class="item">
+                        <a href="#"><img src="component/images/lunbotu6.webp" alt="Third slide"></a>
+                    </div>
+                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                    <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                    <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+            <!-- 缩略图 -->
+            <div class="suoluetu">
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="component/images/preview3.gif" alt="通用的占位符缩略图">
+                        <div class="caption">
+                            <h3 class="text-center">视频标题</h3>
+                            <p>一些示例文本。一些示例文本。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="component/images/preview4.gif" alt="通用的占位符缩略图">
+                        <div class="caption">
+                            <h3 class="text-center">视频标题</h3>
+                            <p>一些示例文本。一些示例文本。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="component/images/preview1.gif" alt="通用的占位符缩略图">
+                        <div class="caption">
+                            <h3 class="text-center">视频标题</h3>
+                            <p>一些示例文本。一些示例文本。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="component/images/preview3.gif" alt="通用的占位符缩略图">
+                        <div class="caption">
+                            <h3 class="text-center">视频标题</h3>
+                            <p>一些示例文本。一些示例文本。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 赛事内容 -->
+        <div class="biaoti">
+            <a href="">
+                <h2>赛事</h2>
+            </a>
+
+            <div class="vidoeshow" title="" id="video1">
+                <a href="/toVideo?id=1">
+                    <video src="" alt="" width="100%"></video>
+                    <span id="video1title"></span>
+                </a>
+            </div>
+
+            <div class="vidoeshow" title="" id="video2">
+                <a href="/toVideo?id=8">
+                    <video src="" alt="" width="100%"></video>
+                    <span id="video2title"></span>
+                </a>
+            </div>
+            <div class="vidoeshow" title="" id="video3">
+                <a href="/toVideo?id=6">
+                    <video src="" alt="" width="100%"></video>
+                    <span id="video3title"></span>
+                </a>
+            </div>
+            <div class="vidoeshow" title="" id="video4">
+                <a href="/toVideo?id=7">
+                    <video src="" alt="" width="100%"></video>
+                    <span id="video4title"></span>
+                </a>
+            </div>
+        </div>
+        <!-- 动画 -->
+        <div class="biaoti">
+
+            <a href="">
+                <h2>动画</h2>
+            </a>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon1.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon1.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+
+
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon1.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon1.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+        </div>
+        <!-- 直播内容 -->
+        <div class="biaoti">
+            <a href="">
+                <h2>直播</h2>
+            </a>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon2.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon2.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon2.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon2.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+        </div>
+        <!-- 热门视频 -->
+        <div class="biaoti">
+            <a href="">
+                <h2>热门</h2>
+            </a>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon3.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon3.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon3.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon3.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+        </div>
+        <!-- 推广内容 -->
+        <div class="biaoti">
+            <a href="">
+                <h2>推广</h2>
+            </a>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon4.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon4.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon4.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+            <div class="vidoeshow">
+                <a href="">
+                    <img src="component/images/videoicon4.webp" alt=""><br>
+                    <span>推广内容介绍</span>
+                </a>
+            </div>
+        </div>
+        <!-- 底部内容 -->
+        <div class="dibu text-center">
+            <section class="">
+                <div style="float: left; width: 33%;">
+                    <h3>bilibili</h3>
+                    <a href="">关于我们</a>
+                    <a href="">联系我们</a>
+                    <a href="">用户协议</a>
+                    <a href="">加入我们</a>
+                    <a href="">友情链接</a>
+                    <a href="">隐私协议</a>
+                    <a href=""> bilibili认证</a>
+                    <a href=""> Investor Relations</a>
+                </div>
+                <div style="float: left; width: 33%;">
+                    <h3>传送门</h3>
+                    <a href="">协议汇总</a>
+                    <a href="">活动中心</a>
+                    <a href="">活动专题页</a>
+                    <a href="">侵权申诉</a>
+                    <a href="">帮助中心</a>
+                    <a href="">社区中心</a>
+                    <a href="">壁纸站</a>
+                    <a href="">广告合作</a>
+                    <a href="">名人堂</a>
+                    <a href="">MCN管理中心</a>
+                    <a href="">高级弹幕</a>
+                    <a href="">品牌号官网</a>
+                </div>
+
+                <div style="float: left; width: 33%;">
+
+                    <div style="float:left; width: 25%;">
+                        <a href="#">
+                            <img src="component/images/logo.png" alt="" style="width: 50px;"><br>
+                            下载APP
+                        </a>
+                    </div>
+
+                    <div style="float:left; width: 25%;">
+                        <a href="#">
+                            <img src="component/images/logo.png" alt="" style="width: 50px;"><br>
+                            公益
+                        </a>
+                    </div>
+
+                    <div style="float:left; width: 25%;">
+                        <a href="#">
+                            <img src="component/images/logo.png" alt="" style="width: 50px;"><br>
+                            官方微博
+                        </a>
+                    </div>
+
+                    <div style="float:left; width: 25%;">
+                        <a href="#">
+                            <img src="component/images/logo.png" alt="" style="width: 50px;"><br>
+                            官方微信
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <hr>
+        <!-- 页脚内容 -->
+        <div class="yejiao text-center">
+            <p>
+                &copy;2022 理工学院计科2班学生韦乃静<br>
+                营业执照信息网络传播视听节目许可证：0910417网络文化经营许可证 沪网文【2019】3804-274号广播电视节目制作经营许可证：（沪）字第01248号增值电信业务经营许可证 沪B2-20100043
+                <br>
+                互联网ICP备案：沪ICP备13002172号-3出版物经营许可证 沪批字第U6699 号互联网药品信息服务资格证 沪-非经营性-2016-0143营业性演出许可证 沪市文演（经）00-2253 |
+            </p>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    $(".vidoeshow").on('mouseenter', function () {
+        // console.log(1);
+        $("#video1 video").attr("autoplay", "autoplay")
+    })
+    // 1
+    $.ajax({
+        url: "getVideos/1",
+        // data : {id:upname},
+        type: "get", //请求方式
+        success: function (data) {
+            //请求成功的回调的函数
+
+            console.log(data);
+            // console.log(data.data.uptouxiang);
+
+            $("#video1").attr("title", data.data.videoname)
+            $("#video1 video").attr("src", data.data.videocontent)
+            $("#video1 video").val(data.data.videocontent)
+            document.getElementById('video1title').innerHTML = data.data.videoname;
+
+        },
+        error: function (data) {
+            //请求失败的回调函数
+        }
+
+    })
+    // 2
+    $.ajax({
+        url: "getVideos/8",
+        // data : {id:upname},
+        type: "get", //请求方式
+        success: function (data) {
+            //请求成功的回调的函数
+
+            console.log(data);
+            console.log(data.data.uptouxiang);
+
+            $("#video2").attr("title", data.data.videoname)
+            $("#video2 video").attr("src", data.data.videocontent)
+            $("#video2 video").val(data.data.videocontent)
+            document.getElementById('video2title').innerHTML = data.data.videoname;
+
+        },
+        error: function (data) {
+            //请求失败的回调函数
+        }
+
+    })
+    // 3
+    $.ajax({
+        url: "getVideos/6",
+        // data : {id:upname},
+        type: "get", //请求方式
+        success: function (data) {
+            //请求成功的回调的函数
+
+            console.log(data);
+            console.log(data.data.uptouxiang);
+
+            $("#video3").attr("title", data.data.videoname)
+            $("#video3 video").attr("src", data.data.videocontent)
+            $("#video3 video").val(data.data.videocontent)
+            document.getElementById('video3title').innerHTML = data.data.videoname;
+
+        },
+        error: function (data) {
+            //请求失败的回调函数
+        }
+
+    })
+    // 4
+    $.ajax({
+        url: "getVideos/7",
+        // data : {id:upname},
+        type: "get", //请求方式
+        success: function (data) {
+            //请求成功的回调的函数
+
+            console.log(data);
+            console.log(data.data.uptouxiang);
+
+            $("#video4").attr("title", data.data.videoname)
+            $("#video4 video").attr("src", data.data.videocontent)
+            $("#video4 video").val(data.data.videocontent)
+            document.getElementById('video4title').innerHTML = data.data.videoname;
+
+        },
+        error: function (data) {
+            //请求失败的回调函数
+        }
+
+    })
+    $("#video1").on("click", function () {
+        console.log(111);
+
+    })
+</script>
+
+
+<script>
+    function load_user() {
+        $.ajax({
+            url: "getUser",
+            // data : {id:upname},
+            type: "get", //请求方式
+            success: function (data) {
+                //请求成功的回调的函数
+                if (data.code == 0000) {
+                    console.log(data);
+                    $("#my1touxiang").attr("src", data.data.touxiang)
+                    document.getElementById('username').innerHTML = data.data.username;
+                    // 修改css
+                    document.getElementById("my1").style.display = "block";
+                    document.getElementById("my1").style.background = "white";
+                    document.getElementById("my1").style.zIndex = "51";
+                    document.getElementById("my1").style.borderRadius = "15px";
+
+                } else {
+                    // 修改css
+                    document.getElementById("my").style.display = "block";
+                    document.getElementById("my").style.background = "white";
+                    document.getElementById("my").style.zIndex = "51";
+                    document.getElementById("my1").style.borderRadius = "15px";
+                }
+                // console.log(data);
+                // console.log(data.data.touxiang);
+                // $("#touxiang").attr("src", data.data.touxiang)
+                // document.getElementById('username').innerHTML = data.data.username;
+            },
+            error: function (data) {
+                //请求失败的回调函数
+            }
+        })
+    }
+    function load_user2() {
+        document.getElementById("my").style.display = "none";
+        document.getElementById("my1").style.display = "none";
+    }
+</script>
+
+<!-- <script>
+    $.ajax({
+        url: "/getVideos",
+        // data : {id:upname},
+        type: "get", //请求方式
+        success: function (data) {
+            console.log(data);
+            console.log(data.data.id);
+            var video = data.data
+            console.log(video);
+            var html = "";
+            for (var i = 0; i < 4; i++) {
+                html += '<a href="">' +
+                    '<h2>动画</h2>' +
+                    '</a>' +
+                    '<div class="vidoeshow" title="" id="video1">' +
+                    '<a href="/toVideo?id=' + video[i].id + '">' +
+                    '<video src="' + video[i].videocontent + '" width="100%"></video>' +
+                    '<span id="video1title"></span>' +
+                    '</a>' +
+                    '</div>'
+            }
+            $("#donghua").html()
+        }
+    })
+</script> -->
+
+</html>

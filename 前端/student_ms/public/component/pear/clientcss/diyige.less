@@ -1,0 +1,75 @@
+// 规定整个系统背景颜色，字体大小，以及宽度高度等等
+
+// 变量定义
+@beijingyanse:#aaff20;
+@zitidaxiao: 26px;
+
+p{
+    background: @beijingyanse;
+    font-size: @zitidaxiao;
+}
+
+div{
+    width: 100px;
+    background: @beijingyanse;
+    height: 100px;
+    font-size: @zitidaxiao;
+}
+// less 嵌套
+.box {
+    width: 200px;
+    height: 200px;
+    background: @beijingyanse;
+    a{
+        color: aqua;
+        &:hover{
+            color: red;
+        }
+    }
+    p {
+        color: pink;
+    }
+}
+// less 运算
+@w:400px;
+@color:green;
+@color2:red;
+
+.dv{
+    width: @w - 256;
+    height: @w / 5;
+    background: @color - @color2;
+}
+
+// less 混合
+@width: 200px;
+@cl1: #91b853;
+@cl2: #584027;
+
+.hanshu(@width,@cl1,@cl2){
+    width: @width;
+    height: @width/2;
+    background: @cl1 + @cl2;
+}
+
+/*
+    less 内置函数
+    saturate(@color,百分比);//  饱和度增加百分比
+    desaturate(@color,百分比);// 饱和度降低百分比
+    fadeout(@color,百分比);//  透明度降低百分比
+    fadein(@color,百分比);// 透明度增加百分比
+    fade(@color,百分比);// 设置透明度为百分比
+    lingten(@color,百分比);// 亮度增加百分比
+    darken(@color,百分比);// 亮度降低百分比
+*/
+
+.dv2{
+    // .hanshu(@width, @cl1, @cl2)
+    .hanshu(300px, blue, pink);
+    a{
+        &:hover{
+            background: fadeout(@cl1,50%);
+        }
+    }
+    
+}

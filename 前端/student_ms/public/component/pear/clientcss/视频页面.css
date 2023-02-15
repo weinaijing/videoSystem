@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow-anchor: none;
+    margin: 0 auto;
+    max-width: 1920px;
+    /* max-height: 1080px; */
+
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    /* height: 180px; */
+    /* background: url(../Javascript/images/navbarBG.png); */
+}
+.navbar-header{
+    left: 10px;
+    line-height: 100px;
+    float: left;
+    position: absolute;
+}
+.navbarleft {
+    left: 60px;
+    position: absolute;
+}
+
+.navbarright {
+    position: absolute;
+    right: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 导航栏样式 */
+.container-fluid {
+max-width: 1080px;
+}
+
+.navlogo {
+    left: 60px;
+    position: absolute;
+}
+
+/* 跟随导航栏 */
+.flownav {
+    bottom: 10%;
+    right: 2%;
+    position: fixed;
+    /* display: flex; */
+    width: 40px;
+}
+
+.flownavBOX {
+    border: 2px solid skyblue;
+    border-radius: 5px;
+}
+
+/* 搜索框样式 */
+body {
+    background: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 2px solid white;
+    border-right: none;
+    padding: 5px;
+    height: 37px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus {
+    color: #00B4CC;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/*调整大小查看搜索栏的变化*/
+.wrap1 {
+    width: 24%;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
+/* 整体导航栏div */
+.topnav {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    top: 0;
+    max-width: 1920px;
+    z-index: 50;
+}
+/* 鼠标移入弹出 */
+.download{
+    display: none;
+    width: 475px;
+    height: 270px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+}
+.downloadBtn:hover .download{
+    display: block;
+    width: 475px;
+    height: 270px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+}
+
+.erweima{
+    text-align: center;
+    width: 220px;
+    height: 270px;
+    overflow: hidden;
+    float: left;
+    border-right: 1px solid skyblue;
+}
+.btndownload{
+    text-align: center;
+    float: left;
+    width: 220px;
+    height: 270px;
+    overflow: hidden;
+}
+.btndownload button{
+    padding: 10px 25px;
+    border: 1px ;
+    border-radius: 10px;
+    background: skyblue;
+}
+/* 视频标题和up */
+.title {
+    margin-top: 25px;
+    width: 80%;
+    height: 100px;
+    position: relative;
+    left: 10%; 
+}
+.titleleft{
+    position: absolute;
+    width: 65%;
+    /* height: 100px; */
+    /* background: pink; */
+    border-right: 1px solid #b8c1cb;
+}
+.titleright{
+    position: absolute;
+    width: 30%;
+    /* height: 100px; */
+    left: 65%;
+    display: flex;
+    /* background: skyblue; */
+}
+.videotitle{
+    width: 80%;
+}
+.videodata{
+    width: 100%;
+    display: flex;
+}
+.videodata span{
+    font-size: 13px;
+    color: #939ca4;
+}
+.bofangliang{
+    margin-right: 20px;
+}
+.danmuliang{
+    margin-right: 20px;
+}
+.faburiqi{
+    margin-right: 20px;
+}
+.glyphicon-exclamation-sign:before {
+    color: red;
+    content: "\e101";
+}
+.upheadshot{
+    width: 20%;
+    height: 100px;
+}
+.upname{
+    width: 80%;
+    height: 33%;
+}
+.qianming{
+    width: 80%;
+    height: 33%;
+}
+/* .panlebtn{
+
+} */
+.chongdian{
+    border: 1px solid skyblue;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+.guanzhu{
+    border: 1px solid skyblue;
+    padding: 5px 20px;
+    border-radius: 10px;
+    margin-top: 6px;
+}
+.video {
+    margin-top: 25px;
+    width: 73%;
+    height: 600px;
+    position: relative;
+    left: 10%; 
+    /* border: 1px solid;
+    border-radius: 10px; */
+}
+/* 点赞、投币、收藏、转发 */
+.controlbar{
+    margin: 25px 0;
+    width: 73%;
+    height: 50px;
+    position: relative;
+    left: 10%; 
+    border-bottom: 1px solid #939ca4;
+    display: flex;
+    /* background: pink; */
+}
+.dianzan{
+    margin-right: 50px;
+}
+.toubi{
+    margin-right: 50px;
+}
+.shoucang{
+    margin-right: 50px;
+}
+.zhuanfa{
+    margin-right: 50px;
+}
+.report{
+    margin-right: 50px;
+}

@@ -1,0 +1,465 @@
+body {
+    overflow-anchor: none;
+    margin: 0 auto;
+    max-width: 1920px;
+    /* max-height: 1080px; */
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.popular-container {
+    margin: 0 auto;
+    padding: 0 0 80px;
+    min-width: 107px;
+    max-width: 1286px;
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: url(../../images/navbarBG.png);
+}
+
+.navbarleft {
+    left: 60px;
+    position: absolute;
+}
+
+.navbarright {
+    position: absolute;
+    right: 60px;
+}
+
+.biaoqianfenlan {
+    width: 100%;
+    height: 100px;
+    /* background-color: skyblue; */
+    top: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 导航栏样式 */
+.container-fluid {
+    width: 100%;
+    position: relative;
+}
+
+.navlogo {
+    left: 60px;
+    position: absolute;
+}
+
+.my {
+    display: none;
+    width: 220px;
+    height: 300px;
+    position: absolute;
+    top: 50px;
+    right: -80px;
+}
+
+.my1 {
+    display: none;
+    width: 220px;
+    height: 200px;
+    position: absolute;
+    top: 50px;
+    right: -80px;
+    background: white;
+    z-index: 50;
+    background-image: url();
+}
+
+/*.mys:hover .my {
+    display: block;
+    width: 475px;
+    height: 270px;
+    position: absolute;
+    top: 50px;
+    right: 0; 
+    background: white;
+    border-radius: 12px;
+    z-index: 51;
+}*/
+
+#loginBtn {
+    border-radius: 10px;
+    padding: 10px 30px;
+    background-color: #34b9ca;
+    color: white;
+    border: solid white;
+}
+
+#loginBtn a {
+    text-decoration: none;
+    color: white;
+}
+
+.download {
+    display: none;
+    width: 475px;
+    height: 270px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+}
+
+.downloadBtn:hover .download {
+    display: block;
+    /* width: 475px;
+    height: 270px;
+    position: absolute;
+    top: 50px;
+    right: 0; */
+    background: white;
+    border-radius: 12px;
+    z-index: 50;
+}
+
+.loginerweima {
+    text-align: center;
+    width: 220px;
+    height: 270px;
+    overflow: hidden;
+    float: left;
+}
+
+.loginerweima1 {
+    margin-top: 15px;
+    text-align: center;
+    width: 220px;
+    height: 270px;
+    overflow: hidden;
+    float: left;
+}
+
+.guanzhu {
+    font-size: 20px;
+}
+
+.fensi {
+    font-size: 20px;
+}
+
+.dongtai {
+    font-size: 20px;
+}
+
+.downloaderweima {
+    text-align: center;
+    width: 220px;
+    height: 270px;
+    overflow: hidden;
+    float: left;
+    border-right: 1px solid skyblue;
+}
+
+.btndownload {
+    text-align: center;
+    float: left;
+    width: 220px;
+    height: 270px;
+    overflow: hidden;
+}
+
+.btndownload button {
+    padding: 10px 25px;
+    border: 1px;
+    border-radius: 10px;
+    background: skyblue;
+}
+
+/* 跟随导航栏 */
+.flownav {
+    background-image: url(../../images/backtop1.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    bottom: 50px;
+    cursor: pointer;
+    height: 174px;
+    position: fixed;
+    text-align: center;
+    width: 150px;
+    z-index: 101;
+    right: 10px;
+}
+
+.flownav:hover {
+    /* bottom: 10%;
+    right: 2%;
+    position: fixed; */
+    /* display: flex; */
+    /* width: 40px; */
+    z-index: 100;
+    animation: launch .5s step-start infinite;
+    background-image: url(../../images/backtop.png);
+
+}
+
+@keyframes launch {
+    0% {
+        background-position: 0 0;
+    }
+
+    25% {
+        background-position: -150px 0;
+    }
+
+    50% {
+        background-position: -300px 0;
+    }
+
+    75% {
+        background-position: -450px 0;
+    }
+
+    100% {
+        background-position: -600px 0;
+    }
+}
+
+.flownavBOX {
+    border: 2px solid skyblue;
+    border-radius: 5px;
+}
+
+/* 搜索框样式 */
+body {
+    background: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 2px solid white;
+    border-right: none;
+    padding: 5px;
+    height: 37px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus {
+    color: #00B4CC;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/*调整大小查看搜索栏的变化*/
+.wrap {
+    width: 24%;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
+
+/* 轮播图 */
+.item {
+    width: 660px;
+}
+
+element.style {
+    float: left;
+}
+
+.suoluetu {
+    width: 650px;
+}
+
+/* 分栏样式 */
+.biaoqianfenlan {
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+.fenlan1 {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    line-height: 20px;
+    float: left;
+    width: 30%;
+    height: 100px;
+    /* background: black; */
+}
+
+.fenlan1detail {
+    left: 50px;
+    position: relative;
+    float: left;
+    margin: 10px 20px 10px 60px
+}
+
+.fenlan2 {
+    width: 70%;
+    height: 100px;
+    position: relative;
+    /* display: flex; */
+    text-align: center;
+    float: left;
+    left: 30%;
+    /* width: 70%; */
+    line-height: 50px;
+    margin-left: 110px;
+
+}
+
+.fenlan2 a {
+    color: black;
+}
+
+.fenlan2left div {
+    text-align: center;
+    line-height: 30px;
+    float: left;
+    min-width: 40px;
+    min-height: 30px;
+    border-radius: 5px;
+    border: 1px solid #c3d4d6;
+    padding: 2px;
+    margin-right: 10px;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.fenlan2left div:hover {
+    background: #d6e3e4;
+    transform: translate(0, -7px);
+    transition: all 1s;
+}
+
+.fenlan2left {
+    float: left;
+    position: absolute;
+    width: 60%;
+    height: 100px;
+    border-right: 1px solid rgb(193, 212, 218);
+    padding-right: 20px;
+}
+
+.fenlan2right {
+    margin-left: 40px;
+    float: left;
+    position: absolute;
+    width: 20%;
+    height: 100px;
+    left: 60%;
+    /* background: black; */
+}
+
+.fenlan2right div {
+    text-align: center;
+    line-height: 30px;
+    float: left;
+    min-width: 40px;
+    min-height: 30px;
+    border-radius: 5px;
+    border: 1px solid #c3d4d6;
+    padding: 2px;
+    margin-right: 10px;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.fenlan2right div:hover {
+    background: #d6e3e4;
+    transform: translate(0, -10px);
+    transition: all 1s;
+}
+
+.neiron {
+    position: relative;
+    display: flex;
+    width: 100%;
+    float: left;
+    margin-left: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.biaoti {
+    margin-top: 40px;
+    display: flex;
+    text-align: center;
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.biaoti h2 {
+    color: black;
+}
+
+.biaoti h2:hover {
+    color: skyblue;
+}
+
+/* 分栏视频部分 */
+.vidoeshow {
+    text-align: center;
+    width: 25%;
+    padding: 20px;
+}
+
+.vidoeshow img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.vidoeshow:hover {
+    transform: scale(1.2, 1.2);
+    z-index: 20;
+    transition: all 0.5s;
+}
+
+/* 底部内容 */
+.dibu {
+    /* display: flex; */
+    text-align: center;
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+.yejiao {
+    /* display: flex; */
+    text-align: center;
+    /* float: left; */
+    width: 100%;
+    margin-top: 200px;
+}
+
+h3 {
+    color: gray;
+}

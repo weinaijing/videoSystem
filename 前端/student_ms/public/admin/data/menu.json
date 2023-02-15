@@ -1,0 +1,105 @@
+[   {
+		"id": "system",
+		"title": "系统管理",
+		"icon": "layui-icon layui-icon-set-fill",
+		"type": 0,
+		"href": "",
+		"children": [{
+				"id": 601,
+				"title": "用户管理",
+				"icon": "layui-icon layui-icon-face-smile",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "/toUser"
+			},
+			{
+				"id": 602,
+				"title": "角色管理",
+				"icon": "layui-icon layui-icon-face-cry",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "/toRole"
+			},
+			{
+				"id": 603,
+				"title": "视频管理",
+				"icon": "layui-icon layui-icon-face-cry",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "/toAddvideo"
+			},
+			{
+				"id": 604,
+				"title": "通过视频",
+				"icon": "layui-icon layui-icon-face-cry",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "/toPassvideo"
+			},
+			{
+				"id": 605,
+				"title": "举报管理",
+				"icon": "layui-icon layui-icon-face-cry",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "/toReportVideo"
+			},
+			{
+				"id": 606,
+				"title": "个人中心",
+				"icon": "layui-icon layui-icon-face-cry",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "/toperson"
+			}
+		]
+	},
+	{
+		"id": "client",
+		"title": "客户端预览",
+		"icon": "layui-icon layui-icon-set-fill",
+		"type": 0,
+		"href": "",
+		"children": [{
+				"id": 701,
+				"title": "首页",
+				"icon": "layui-icon layui-icon-face-smile",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "/toHome"
+			},
+			{
+				"id": 702,
+				"title": "动态",
+				"icon": "layui-icon layui-icon-face-cry",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "/toTrends"
+			},
+			{
+				"id": 703,
+				"title": "频道",
+				"icon": "layui-icon layui-icon-face-cry",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "/toChannel"
+			},
+			{
+				"id": 704,
+				"title": "热门",
+				"icon": "layui-icon layui-icon-face-cry",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "/toHot"
+			},
+			{
+				"id": 705,
+				"title": "个人中心",
+				"icon": "layui-icon layui-icon-face-cry",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "/toperson"
+			}
+		]
+	}
+]
